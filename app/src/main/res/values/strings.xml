@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StaySafe AI</string>
+    <string name="tagline">AI-Powered Room Security Scanner</string>
+    <string name="btn_start_scan">Scan This Room</string>
+    <string name="btn_watch_ad">Watch Ad to Scan</string>
+    <string name="btn_history">Community Scan History</string>
+    <string name="scan_phase_passive">Passive Scan</string>
+    <string name="scan_phase_active">Active Scan</string>
+    <string name="scan_phase_feedback">Feedback Loop Test</string>
+    <string name="scan_phase_confirm">User Confirmation</string>
+    <string name="scan_phase_ai">AI Evaluation</string>
+    <string name="threat_high">HIGH THREAT DETECTED</string>
+    <string name="threat_medium">MEDIUM THREAT</string>
+    <string name="threat_low">LOW THREAT</string>
+    <string name="threat_none">ROOM APPEARS SAFE</string>
+    <string name="btn_find_device">📍 Find Device</string>
+    <string name="btn_export_pdf">Export PDF</string>
+    <string name="btn_rescan">Rescan Room</string>
+    <string name="community_alert">⚠️ Other guests flagged issues here</string>
+    <string name="community_safe">✅ Previously scanned — no issues reported</string>
+    <string name="community_first">🔍 First scan at this location</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="brand_dark">#1A1A2E</color>
+    <color name="brand_mid">#16213E</color>
+    <color name="brand_accent">#0F3460</color>
+    <color name="brand_highlight">#E94560</color>
+
+    <!-- Threat levels -->
+    <color name="danger_red">#E53935</color>
+    <color name="danger_red_bg">#FFEBEE</color>
+    <color name="warning_orange">#F57C00</color>
+    <color name="warning_orange_bg">#FFF3E0</color>
+    <color name="caution_yellow">#F9A825</color>
+    <color name="caution_yellow_bg">#FFFDE7</color>
+    <color name="safe_green">#2E7D32</color>
+    <color name="safe_green_bg">#E8F5E9</color>
+
+    <!-- UI -->
+    <color name="surface_dark">#1E1E2E</color>
+    <color name="surface_card">#252535</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0C0</color>
+    <color name="divider">#2A2A3E</color>
+</resources>

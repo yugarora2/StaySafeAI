@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Threat banner -->
+        <LinearLayout
+            android:id="@+id/bannerThreat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvThreatIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:layout_marginEnd="12dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvThreatTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/danger_red"/>
+
+                <TextView
+                    android:id="@+id/tvThreatSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#666666"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Camera + Mic threat cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- Camera card -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/CamGuard.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🎥 CAMERA" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        <TextView android:id="@+id/tvCameraThreatLevel" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvCameraThreatScore" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progressCamera" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                            app:trackCornerRadius="2dp"/>
+                        <TextView android:id="@+id/tvSuspectedDevice" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="10sp"
+                            android:textColor="@color/text_secondary" android:visibility="gone"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Mic card -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/CamGuard.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🎙️ MICROPHONE" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        <TextView android:id="@+id/tvMicThreatLevel" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvMicThreatScore" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progressMic" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                            app:trackCornerRadius="2dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Room Safety Score -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CamGuard.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="ROOM SAFETY SCORE" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progressSafety" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                            app:trackCornerRadius="4dp" android:max="100"/>
+                    </LinearLayout>
+                    <TextView android:id="@+id/tvSafetyScore" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginStart="16dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Sensor Findings -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SENSOR FINDINGS" android:textSize="11sp" android:textColor="@color/text_secondary"
+                android:letterSpacing="0.15" android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutFindings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Location hint card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocation"
+                style="@style/CamGuard.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📍 LOCATION" android:textSize="11sp" android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp"/>
+                    <TextView android:id="@+id/tvLocationHint" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                    <TextView android:id="@+id/tvHidingSpots" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- AI Evaluation -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CamGuard.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AI" android:textSize="10sp" android:textColor="@color/surface_dark"
+                            android:background="@drawable/bg_ai_badge" android:paddingHorizontal="6dp"
+                            android:paddingVertical="2dp" android:layout_marginEnd="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AI Evaluation" android:textSize="13sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <TextView android:id="@+id/tvAISummary" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="13sp"
+                        android:textColor="@color/text_secondary" android:lineSpacingExtra="4dp"
+                        android:layout_marginBottom="10dp"/>
+                    <TextView android:id="@+id/tvAIRecommendation" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textSize="13sp"
+                        android:textColor="@color/text_primary" android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView android:id="@+id/tvFalsePositiveRisk" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="11sp"
+                        android:textColor="@color/text_secondary"/>
+                    <TextView android:id="@+id/tvAIConfidence" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="11sp"
+                        android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Find Device button (conditional) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFindDevice"
+                style="@style/CamGuard.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="📍  Find Device Location"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"/>
+
+            <!-- Bottom action buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWhatToDo"
+                    style="@style/CamGuard.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="What to do"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="6dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSweepChecklist"
+                    style="@style/CamGuard.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Mirror test"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="6dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReport"
+                    style="@style/CamGuard.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Share"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExportPDF"
+                    style="@style/CamGuard.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Export PDF"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="6dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRescan"
+                    style="@style/CamGuard.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Rescan"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="6dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHome"
+                    style="@style/CamGuard.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Home"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Sticky banner ad at very bottom -->
+    <LinearLayout
+        android:id="@+id/bannerAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/surface_dark"
+        android:paddingVertical="4dp"/>
+
+</ScrollView>
